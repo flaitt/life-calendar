@@ -64,25 +64,9 @@ export const BirthDayInput = styled.input`
   &::-webkit-inner-spin-button {
     display: none;
     -webkit-appearance: none;
-  } */
+  }
   &:focus {
     outline: none;
   }
   outline: 0;
-`;
-
-export const CalendarComponent = styled.div`
-  position: absolute;
-  margin-left: 105px;
-  margin-top: 23px;
-  @media screen and (max-width: 1200px) {
-    margin-left: -105px;
-    /* margin-top: 33px; */
-  }
-`;
-
-export const CalendarWrapper = styled.div`
-  @supports (-webkit-touch-callout: none) {
-    display: none;
-  }
 `;

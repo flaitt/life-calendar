@@ -1,11 +1,8 @@
-import Calendar from "react-calendar";
 import { Inter } from "next/font/google";
 import {
   BirthDayInput,
   BirthDayInputWrapper,
   BirthDayWrapper,
-  CalendarComponent,
-  CalendarWrapper,
   Container,
   Content,
   Title,
@@ -13,15 +10,12 @@ import {
 } from "./styles";
 import { useEffect, useState } from "react";
 import "react-calendar/dist/Calendar.css";
-import { LuCalendarDays } from "react-icons/lu";
-import { CgCloseO } from "react-icons/cg";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export default function MainComponent() {
   const [numberOfWeeks, setNumberOfWeeks] = useState(Date.now());
   const [date, setDate] = useState(new Date());
-  const [showCalendar, setShowCalendar] = useState(false);
 
   const weeks = Array.from({ length: 90 * 12 * 4 }, (_, index) => index + 1);
 
@@ -43,7 +37,6 @@ export default function MainComponent() {
   const handleChangeTypeDate = (event: Date): void => {
     try {
       event.toISOString().split("T")[0];
-      setShowCalendar(false);
       setDate(event);
     } catch (error) {
       console.error(error);
@@ -51,7 +44,6 @@ export default function MainComponent() {
   };
 
   useEffect(() => {
-    console.log("ahoy");
     setNumberOfWeeks(weeksPassed(date));
   }, [date]);
 
@@ -68,25 +60,6 @@ export default function MainComponent() {
               handleChangeTypeDate(new Date(event.target.value))
             }
           />
-          {/* <LuCalendarDays
-            onClick={() => setShowCalendar(!showCalendar)}
-            size={23}
-          /> */}
-          {/* <CalendarComponent>
-            {showCalendar && (
-              <CalendarWrapper>
-                <CgCloseO
-                  onClick={() => setShowCalendar(!showCalendar)}
-                  size={23}
-                  style={{ float: "right", marginTop: "5px", marginRight: "5px"}}
-                />
-                <Calendar
-                  onChange={(event) => handleChangeDate(event)}
-                  value={date}
-                />
-              </CalendarWrapper>
-            )}
-          </CalendarComponent> */}
         </BirthDayInputWrapper>
       </BirthDayWrapper>
       <Content>

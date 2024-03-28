@@ -5,6 +5,7 @@ import {
   BirthDayInputWrapper,
   BirthDayWrapper,
   CalendarComponent,
+  CalendarWrapper,
   Container,
   Content,
   Title,
@@ -58,7 +59,7 @@ export default function MainComponent() {
     <Container>
       <Title>The Life Calendar</Title>
       <BirthDayWrapper>
-        <div>Coloque sua data de nascimento:</div>
+        <div>Selecione sua data de nascimento:</div>
         <BirthDayInputWrapper>
           <BirthDayInput
             type="date"
@@ -67,13 +68,13 @@ export default function MainComponent() {
               handleChangeTypeDate(new Date(event.target.value))
             }
           />
-          <LuCalendarDays
+          {/* <LuCalendarDays
             onClick={() => setShowCalendar(!showCalendar)}
             size={23}
-          />
-          <CalendarComponent>
+          /> */}
+          {/* <CalendarComponent>
             {showCalendar && (
-              <div>
+              <CalendarWrapper>
                 <CgCloseO
                   onClick={() => setShowCalendar(!showCalendar)}
                   size={23}
@@ -83,9 +84,9 @@ export default function MainComponent() {
                   onChange={(event) => handleChangeDate(event)}
                   value={date}
                 />
-              </div>
+              </CalendarWrapper>
             )}
-          </CalendarComponent>
+          </CalendarComponent> */}
         </BirthDayInputWrapper>
       </BirthDayWrapper>
       <Content>

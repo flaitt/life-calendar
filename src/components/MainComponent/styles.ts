@@ -63,10 +63,13 @@ export const BirthDayInput = styled.input`
     display: none;
     -webkit-appearance: none;
   }
+  &:focus {
+    outline: none;
+}
 `;
 
 export const CalendarComponent = styled.div`
   position: absolute;
-  margin-left: 177px;
-  margin-top: 20px;
+  margin-left: 105px;
+  margin-top: 23px;
 `;

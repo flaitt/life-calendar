@@ -40,10 +40,14 @@ export default function MainComponent() {
   };
 
   const handleChangeTypeDate = (event: Date): void => {
-    setShowCalendar(false);
-    setDate(event);
-  
-  }
+    try {
+      event.toISOString().split("T")[0];
+      setShowCalendar(false);
+      setDate(event);
+    } catch (error) {
+      console.error(error);
+    }
+  };
 
   useEffect(() => {
     console.log("ahoy");
@@ -59,7 +63,9 @@ export default function MainComponent() {
           <BirthDayInput
             type="date"
             value={date.toISOString().split("T")[0]}
-            onChange={(event) => handleChangeTypeDate(new Date(event.target.value))}
+            onChange={(event) =>
+              handleChangeTypeDate(new Date(event.target.value))
+            }
           />
           <LuCalendarDays
             onClick={() => setShowCalendar(!showCalendar)}

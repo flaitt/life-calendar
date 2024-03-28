@@ -15,6 +15,9 @@ export const Content = styled.div`
   display: flex;
   flex-wrap: wrap;
   max-width: 1200px;
+  @media screen and (max-width: 1200px) {
+    width: 90%;
+  }
   /* justify-content: center; */
   /* height: 200px; */
   /* background-color: #6789; */
@@ -34,6 +37,10 @@ export const Title = styled.div`
   margin-bottom: 20px;
   font-weight: bold;
   color: #333;
+  @media screen and (max-width: 1200px) {
+   font-size: 24px;
+   margin-top: 10px;
+  }
 `;
 
 export const BirthDayWrapper = styled.div`
@@ -72,4 +79,8 @@ export const CalendarComponent = styled.div`
   position: absolute;
   margin-left: 105px;
   margin-top: 23px;
+  @media screen and (max-width: 1200px) {
+    margin-left: -105px;
+  /* margin-top: 33px; */
+  }
 `;

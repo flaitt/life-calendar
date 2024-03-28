@@ -13,7 +13,7 @@ import {
 import { useEffect, useState } from "react";
 import "react-calendar/dist/Calendar.css";
 import { LuCalendarDays } from "react-icons/lu";
-import { number } from "prop-types";
+import { CgCloseO } from "react-icons/cg";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -73,10 +73,17 @@ export default function MainComponent() {
           />
           <CalendarComponent>
             {showCalendar && (
-              <Calendar
-                onChange={(event) => handleChangeDate(event)}
-                value={date}
-              />
+              <div>
+                <CgCloseO
+                  onClick={() => setShowCalendar(!showCalendar)}
+                  size={23}
+                  style={{ float: "right", marginTop: "5px", marginRight: "5px"}}
+                />
+                <Calendar
+                  onChange={(event) => handleChangeDate(event)}
+                  value={date}
+                />
+              </div>
             )}
           </CalendarComponent>
         </BirthDayInputWrapper>
